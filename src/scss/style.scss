@@ -97,7 +97,7 @@ main {
     }
     .icon_left::after {
         position: absolute;
-        content: url("/block7/src/img/divider.svg");
+        content: url("img/divider.svg");
         display: block;
         width: 2px;
         height: 32px;
@@ -136,7 +136,7 @@ main {
     padding-inline-start: 0;
 }
 .block_right::before {
-    content: url("/block7/src/img/divider.svg");
+    content: url("img/divider.svg");
     display: block;
     width: 2px;
     height: 32px;
