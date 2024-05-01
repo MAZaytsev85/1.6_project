@@ -1,0 +1,358 @@
+@import "swiper";
+@import "modal";
+@import "sidebar";
+@import "footer";
+
+html,
+body {
+    width: 100%;
+    margin: 0;
+    background-color: #f8f8f8;
+}
+
+main {
+    width: 100%;
+    background-color: #f8f8f8;
+    margin: 0;
+}
+
+@media (min-width: 1366px) {
+    .cite {
+        display: flex;
+        flex-direction: row-reverse;
+        position: relative;
+    }
+}
+/* Стилизация шапки*/
+.header {
+    display: flex;
+    width: 100%;
+    height: 88px;
+    background-color: #ffffff;
+    justify-content: space-around;
+}
+@media (min-width: 1366px) {
+    /* Прячем шапку */
+    .header {
+        display: none;
+    }
+}
+/* Присваиваем значение флекс контейнера и выравнивание блокам шапки */
+.header__block {
+    display: flex;
+    align-items: center;
+}
+
+/* Назначем рамеры логотипу */
+.header__logo {
+    width: 96px;
+    height: 50px;
+}
+
+/* Назначаем размеры иконкам */
+.header__icon {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: #ffffff;
+}
+
+/* Иконка блюрится при наведении */
+.header__icon:hover {
+    filter: blur(2px);
+    transition: 1s;
+}
+
+@media (min-width: 768px) {
+    .header__icon:last-child {
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 1366px) {
+    .header__icon {
+        background-color: #f8f8f8;
+    }
+}
+
+/* Стилизуем левый блок шапки с иконкой бургера и логотипом */
+.block_left {
+    width: 55%;
+    justify-content: space-around;
+}
+
+@media (min-width: 768px) {
+    .block_left {
+        width: 50%;
+        justify-content: flex-start;
+    }
+}
+
+@media (min-width: 768px) {
+    /* Добавляем декоративный разделитель иконке с бургером в левом блоке шапки */
+    .icon_left {
+        position: relative;
+        margin: 24px;
+        padding-right: 65px;
+    }
+    .icon_left::after {
+        position: absolute;
+        content: url("/block7/src/img/divider.svg");
+        display: block;
+        width: 2px;
+        height: 32px;
+        top: 5px;
+        right: 0;
+    }
+}
+
+/*Стилизуем центральный блок шапки с тремя иконками (доступен с разрешения 768+)*/
+.block_center {
+    display: none;
+    width: 35%;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+@media (min-width: 768px) {
+    .block_center {
+        display: flex;
+        width: 25%;
+        justify-content: flex-end;
+        padding-inline-start: 0;
+    }
+}
+
+/* Задаем иконкам отступы */
+.icon_center {
+    margin: 24px;
+}
+
+/* Стилизуем правый блок шапки с двумя иконками  */
+.block_right {
+    width: 45%;
+    justify-content: space-evenly;
+    list-style-type: none;
+    padding-inline-start: 0;
+}
+.block_right::before {
+    content: url("/block7/src/img/divider.svg");
+    display: block;
+    width: 2px;
+    height: 32px;
+}
+
+@media (min-width: 768px) {
+    .block_right {
+        width: 25%;
+    }
+}
+/* Стилизация заголовка основного меню */
+.main_title {
+    display: inline-block;
+    font-family: "TT Lakes", Arial, sans-serif;
+    font-size: 28px;
+    border-left: #41f6d7 4px solid;
+    margin: 24px 0 24px 0;
+    padding-left: 24px;
+}
+
+/* Стилизация блока навигации */
+
+/* Задаем начало блока, отменяем перенос при переполнении строки, добавляем ползунок при переполнении */
+.main__navbar {
+    display: flex;
+    flex-direction: row;
+    text-wrap: nowrap;
+    overflow: scroll;
+    list-style-type: none;
+}
+
+@media (min-width: 768px) {
+    .main__navbar {
+        overflow: hidden;
+    }
+}
+
+@media (min-width: 1366px) {
+    /* Для списка кнопок навигации делаем перенос элементов, прижимаем влево и задаем расстояние между строками */
+    .main__navbar {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        row-gap: 10px;
+    }
+}
+
+/* Стилизуем элементы списка кнопок навигации */
+.navbar_li {
+    padding-inline-start: 28px;
+}
+
+/* Стилизуем кнопки блока навигации*/
+.navbar_button {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    font-family: "TT Lakes", Arial, sans-serif;
+    font-size: 16px;
+    color: #7e7e82;
+    background-color: #f8f8f8;
+    border: none;
+    padding: 0 15px;
+    text-decoration: none;
+}
+
+/* Кнопка списка меняет цвет и размер при наведении */
+.navbar_button:hover {
+    border: #b8ffec 2px solid;
+    border-radius: 6px;
+    color: #080808;
+    background-color: #f7f7ff;
+    transition: 0.2s;
+}
+
+.sidebar__navbar_button {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    font-family: "TT Lakes", Arial, sans-serif;
+    font-size: 16px;
+    color: #7e7e82;
+    background-color: #f8f8f8;
+    border: none;
+    padding: 0 15px;
+    text-decoration: none;
+}
+
+.sidebar__navbar_button:hover {
+    border-left: #41f6d7 4px solid;
+    color: #7e7e82;
+    transition: 0.2s;
+}
+
+/* Назначаем ширину, флекс и расположение в столбец */
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .content {
+        flex-direction: row;
+    }
+}
+
+/* Отдельный блок с текстом статьи и ссылкой на продолжение текста назначаем флексом в столбец */
+.left_side {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .left_side {
+        width: 50%;
+    }
+}
+
+/* Стилизуем текст */
+.content_text {
+    font-family: "TT Lakes", Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* Задаем отступы, размер и стилизацию блоку с текстом */
+.content_top {
+    height: 110px;
+    overflow: hidden;
+    margin: 0 15px;
+    margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    .content_top {
+        justify-self: flex-start;
+        height: 140px;
+        margin: 0 48px 0 24px;
+    }
+}
+
+/* Задаем отступы и размер блоку с кнопкой на продолжение текста  */
+.content_center {
+    height: 10%;
+    margin: 0 15px;
+}
+/* Меняем цвер при наведени на кнопку */
+.content_center:hover {
+    color: #142fb4;
+}
+@media (min-width: 768px) {
+    /* Добавляем отступ для ссылки развертывания текста */
+    .content_center {
+        margin-top: 24px;
+    }
+}
+
+/* Задаем размер и отступы для блока с фото */
+.content_img {
+    height: 50%;
+    margin: 20px 0;
+}
+
+@media (min-width: 768px) {
+    /* Ровняем картинку */
+    .content_img {
+        width: 50%;
+        height: 100%;
+        margin: 0%;
+        margin-top: 15px;
+    }
+}
+
+/* Стилизуем ссылку на развертывание текста, убираем подчеркивание, выравниваем буквы */
+.content_link {
+    border: none;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    background-color: #f8f8f8;
+    color: #1b1c21;
+}
+
+/* Прячем контент для расширений от 768+*/
+
+.fulsize_rightbar {
+    display: none;
+}
+
+@media (min-width: 1366px) {
+    /* Для правого блока в блоке с заголовком добавляем отступ и делаем его флексом 
+	с расположением элементов по центру по вертикали*/
+    .fulsize_rightbar {
+        padding-right: 32px;
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+    }
+}
+
+@media (min-width: 1366px) {
+    /* Выравниваем блок с заголовкой, делаем его флексом с расположением элементов по краям */
+    .title_bar {
+        padding-top: 42px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /* Стилизуем текст правого блока */
+    .title_bar_text {
+        display: flex;
+        padding-left: 15px;
+        font-family: "TT Lakes", Arial, sans-serif;
+        font-size: 16px;
+        color: #1b1c21;
+        padding-right: 10px;
+        align-items: center;
+    }
+}
+

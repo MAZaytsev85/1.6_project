@@ -1,0 +1,395 @@
+/* Макет 1.5 */
+/* Стилизуем блок с заголовком, задаем градиент									 */
+.brendbar {
+    background-color: #f8f8f8;
+}
+
+.brendbar__header {
+    border-top: 1px solid #d9fff5;
+    min-height: 80px;
+    display: flex;
+    background: linear-gradient(to right, #f8f8f8 50%, #ffffff);
+}
+
+/* Меняем высоту после мобилки */
+@media (min-width: 768px) {
+    .brendbar__header {
+        min-height: 56px;
+    }
+}
+
+/* Стилизуем заголовок */
+.brendbar__title {
+    width: 100%;
+    display: flex;
+    padding: 16px 16px;
+    background-color: #f8f8f8;
+    font-family: "TT Lakes", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #7e7e82;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #f8f8f8 50%, #ffffff);
+}
+
+/* Меняем отступы после мобилки */
+@media (min-width: 768px) {
+    .brendbar__title {
+        padding: 16px 32px;
+    }
+}
+
+/* класс для кнопки развертывания */
+.fullsize {
+    height: auto !important;
+}
+
+/* Стилизуем кнопку разветрывания и прячем ее на мобилке*/
+.button__link {
+    font-family: "TT Lakes", Arial, sans-serif;
+    border: none;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    background-color: #f8f8f8;
+    color: #1b1c21;
+    display: none;
+    margin-top: 20px;
+}
+
+.button__link:hover {
+    font-size: 17px;
+}
+
+/* Показываем кнопку после мобилки */
+@media (min-width: 768px) {
+    .button__link {
+        display: flex;
+    }
+}
+
+/* класс для разворота картинки кнопки развертывания */
+.button_close {
+    transform: rotate(180deg);
+}
+
+/* Стили свайпера */
+.content_slide {
+    width: 100%;
+    margin: 0;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.content_slide.fullsize {
+    height: auto;
+}
+
+.content_slide.bottom {
+    height: auto;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .content_slide.center {
+        height: auto;
+    }
+}
+
+.swiper {
+    width: 100%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+    padding-inline-start: 16px;
+}
+
+.swiper-slide {
+    grid-column: 4 span;
+}
+
+@media (min-width: 1366px) {
+    .swiper-slide {
+        grid-column: 3 span;
+    }
+}
+
+.content-card {
+    width: 240px;
+    height: 72px;
+    display: flex;
+    padding: 0 16px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+}
+
+.content-card:hover {
+    box-shadow: 1px 1px 3px 1px inset #bcbcc2, -1px -1px 3px 1px inset #bcbcc2;
+}
+
+@media (min-width: 768px) and (max-width: 1119px) {
+    .content-card {
+        width: 224px;
+        height: 72px;
+    }
+}
+
+.services_name {
+    grid-area: services_name;
+    color: #7e7e82;
+}
+
+.services_description {
+    grid-area: services_description;
+}
+
+.services_price {
+    grid-area: services_price;
+    color: #7e7e82;
+}
+
+.services_price_void {
+    grid-area: services_price_void;
+}
+
+.services_time {
+    color: #7e7e82;
+    grid-area: services_time;
+}
+
+.services_time_void {
+    grid-area: services_time_void;
+}
+
+.A {
+    display: flex;
+    flex-direction: column;
+    grid-area: A;
+}
+.B {
+    display: flex;
+    flex-direction: column;
+    grid-area: B;
+}
+.C {
+    display: flex;
+    flex-direction: column;
+    grid-area: C;
+}
+
+.services-card {
+    width: 220px;
+    height: 160px;
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas:
+        "A A"
+        "B B"
+        "C button_order";
+
+    border-radius: 5px;
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    font-family: "TT Lakes", Arial, sans-serif;
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    .services-card {
+        display: grid;
+        width: 93%;
+        height: 64px;
+        padding: 0 0 0 20px;
+        gap: 0;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas: "A A A B C button_order";
+    }
+}
+
+@media (min-width: 768px) {
+    .services-card_first {
+        background-color: #f8f8f8;
+        border: none;
+    }
+
+    .services-card_first .services_description {
+        display: none;
+    }
+    .services-card_first .services_price_void {
+        display: none;
+    }
+    .services-card_first .services_time_void {
+        display: none;
+    }
+    .services-card_first .button_order {
+        display: none;
+    }
+    .services-card_all {
+        position: relative;
+        border: none;
+    }
+    .separator::after {
+        position: absolute;
+        top: 62px;
+        left: 3%;
+        width: 94%;
+        border-top: 2px solid #eaeaea;
+        content: "";
+    }
+
+    .services-card_all .services_name {
+        display: none;
+    }
+    .services-card_all .services_price {
+        display: none;
+    }
+    .services-card_all .services_time {
+        display: none;
+    }
+}
+
+.services-card:hover {
+    box-shadow: 1px 1px 3px 1px inset #bcbcc2, -1px -1px 3px 1px inset #bcbcc2;
+}
+
+.repair-card {
+    width: 240px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px;
+    justify-content: space-between;
+    border-radius: 5px;
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+}
+
+.repair-card:hover {
+    box-shadow: 1px 1px 3px 1px inset #bcbcc2, -1px -1px 3px 1px inset #bcbcc2;
+}
+
+.slide_text {
+    font-family: "TT Lakes", Arial, sans-serif;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.slide_img {
+    margin: 0 0 10px 170px;
+}
+
+@media (max-width: 768px) {
+    .slider-1 .swiper-wrapper {
+        display: flex;
+        column-gap: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .slider-2 .swiper-wrapper {
+        display: flex;
+        column-gap: 0;
+        height: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .slider-3 .swiper-wrapper {
+        height: 220px;
+        display: flex;
+        column-gap: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .slider-3 .swiper-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 0;
+        row-gap: 0;
+        padding-inline-start: 20px;
+    }
+}
+
+/* Стилизуем размытие в правой части слайдера */
+.fade {
+    width: 24px;
+    height: 81px;
+    position: absolute;
+    top: 730px;
+    right: 0;
+    z-index: 2;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0) 20%, #ffffff);
+}
+
+.center_fade {
+    width: 24px;
+    height: 166px;
+    top: 990px;
+}
+
+.bottom_fade {
+    width: 24px;
+    height: 230px;
+    top: 1280px;
+}
+
+/* Прячем размытие после мобилки */
+@media (min-width: 768px) {
+    .fade {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .swiper-pagination {
+        display: none;
+    }
+}
+
+.slider-1 {
+    padding-bottom: 20px;
+}
+
+slider-2 {
+    padding-bottom: 20px;
+}
+
+slider-3 {
+    padding-bottom: 20px;
+}
+
+.button_order {
+    grid-area: button_order;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: #ffffff;
+    width: 119px;
+    height: 32px;
+    font-family: "TT Lakes", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    border: none;
+    border-radius: 30px;
+    background-color: deeppink;
+}
+
+.button_order:hover {
+    width: 117px;
+    height: 30px;
+}

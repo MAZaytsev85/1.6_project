@@ -1,0 +1,132 @@
+/* 
+Модалки */
+
+.modal_call {
+    z-index: -2;
+    flex-direction: column;
+    position: absolute;
+    width: 320px;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    background-color: #ffffff;
+    content: "";
+}
+
+@media (min-width: 1366px) {
+    .modal_call {
+        width: 440px;
+        border-left: 1px solid #d9fff5;
+        box-shadow: 3px -15px 15px 0 #9b9eac;
+    }
+}
+
+.modal__input {
+    margin: 5px 20px;
+    outline: none;
+    box-shadow: none;
+    width: 85%;
+    height: 48px;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+input::placeholder {
+    padding: 10px;
+    color: #b5b6bc;
+}
+
+.message::placeholder {
+    transform: translateY(-35px);
+}
+
+.message {
+    height: 118px;
+}
+
+.modal_text {
+    display: block;
+    margin-left: 20px;
+    font-family: "TT Lakes", Arial, sans-serif;
+    font-size: 14px;
+    color: #7e7e82;
+}
+
+.important_text {
+    color: deeppink;
+}
+
+.modal_title {
+    display: block;
+    width: auto;
+    font-family: "TT Lakes", Arial, sans-serif;
+    font-size: 24px;
+    border-left: #41f6d7 4px solid;
+    margin: 24px 0 24px 0;
+    padding-left: 20px;
+}
+
+.modal_button {
+    display: flex;
+    position: relative;
+    left: 180px;
+}
+
+@media (min-width: 1366px) {
+    .modal_button {
+        left: 290px;
+    }
+}
+
+.modal_close {
+    margin: 20px;
+}
+
+@media (min-width: 1366px) {
+    .modal_close {
+        position: absolute;
+        left: -100px;
+        content: "";
+    }
+}
+
+.modal_open {
+    z-index: 2;
+}
+
+.modal_back {
+    z-index: -2;
+    flex-direction: column;
+    position: absolute;
+    width: 320px;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    background-color: #ffffff;
+    content: "";
+}
+
+@media (min-width: 1366px) {
+    .modal_back {
+        width: 440px;
+        border-left: 1px solid #d9fff5;
+        box-shadow: 3px -15px 15px 0 #9b9eac;
+    }
+}
+
+.chat_open {
+    z-index: 2;
+}
+
+.modal_close_caht {
+    margin: 20px;
+}
+
+@media (min-width: 1366px) {
+    .modal_close_caht {
+        position: absolute;
+        left: -100px;
+        content: "";
+    }
+}
