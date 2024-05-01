@@ -1,5 +1,3 @@
-import '../scss/style.scss'
-
 
 // Функция инициализации свайпера с брейкпоинтом 769, после которого он должен ломаться, но пока не ломается
 window.addEventListener('DOMContentLoaded', () => {
@@ -182,4 +180,3 @@ modal_close_caht.addEventListener('click', function() {
 	modal_2.classList.remove('chat_open');
 	blure.classList.remove('blure_use');
 })
-
