@@ -182,3 +182,4 @@ modal_close_caht.addEventListener('click', function() {
 	modal_2.classList.remove('chat_open');
 	blure.classList.remove('blure_use');
 })
+
