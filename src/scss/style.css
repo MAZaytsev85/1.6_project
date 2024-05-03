@@ -1,8 +1,8 @@
-@import "swiper";
-@import "modal";
-@import "sidebar";
-@import "footer";
-@import "fonts";
+@import "./path/to/swiper";
+@import "./path/to/modal";
+@import "./path/to/sidebar";
+@import "./path/to/footer";
+@import "./path/to/fonts";
 
 html,
 body {
