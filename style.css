@@ -1,0 +1,947 @@
+@charset "UTF-8";
+/* Макет 1.5 */
+/* Стилизуем блок с заголовком, задаем градиент									 */
+.brendbar {
+  background-color: #f8f8f8; }
+
+.brendbar__header {
+  border-top: 1px solid #d9fff5;
+  min-height: 80px;
+  display: flex;
+  background: linear-gradient(to right, #f8f8f8 50%, #ffffff); }
+
+/* Меняем высоту после мобилки */
+@media (min-width: 768px) {
+  .brendbar__header {
+    min-height: 56px; } }
+
+/* Стилизуем заголовок */
+.brendbar__title {
+  width: 100%;
+  display: flex;
+  padding: 16px 16px;
+  background-color: #f8f8f8;
+  font-family: "TT Lakes", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #7e7e82;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #f8f8f8 50%, #ffffff); }
+
+/* Меняем отступы после мобилки */
+@media (min-width: 768px) {
+  .brendbar__title {
+    padding: 16px 32px; } }
+
+/* класс для кнопки развертывания */
+.fullsize {
+  height: auto !important; }
+
+/* Стилизуем кнопку разветрывания и прячем ее на мобилке*/
+.button__link {
+  font-family: "TT Lakes", Arial, sans-serif;
+  border: none;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  background-color: #f8f8f8;
+  color: #1b1c21;
+  display: none;
+  margin-top: 20px; }
+
+.button__link:hover {
+  font-size: 17px; }
+
+/* Показываем кнопку после мобилки */
+@media (min-width: 768px) {
+  .button__link {
+    display: flex; } }
+
+/* класс для разворота картинки кнопки развертывания */
+.button_close {
+  transform: rotate(180deg); }
+
+/* Стили свайпера */
+.content_slide {
+  width: 100%;
+  margin: 0;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; }
+
+.content_slide.fullsize {
+  height: auto; }
+
+.content_slide.bottom {
+  height: auto;
+  margin: 0; }
+
+@media (max-width: 768px) {
+  .content_slide.center {
+    height: auto; } }
+
+.swiper {
+  width: 100%; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+  -webkit-padding-start: 16px;
+          padding-inline-start: 16px; }
+
+.swiper-slide {
+  grid-column: 4 span; }
+
+@media (min-width: 1366px) {
+  .swiper-slide {
+    grid-column: 3 span; } }
+
+.content-card {
+  width: 240px;
+  height: 72px;
+  display: flex;
+  padding: 0 16px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #ffffff;
+  border: 1px solid #eaeaea; }
+
+.content-card:hover {
+  box-shadow: 1px 1px 3px 1px inset #bcbcc2, -1px -1px 3px 1px inset #bcbcc2; }
+
+@media (min-width: 768px) and (max-width: 1119px) {
+  .content-card {
+    width: 224px;
+    height: 72px; } }
+
+.services_name {
+  grid-area: services_name;
+  color: #7e7e82; }
+
+.services_description {
+  grid-area: services_description; }
+
+.services_price {
+  grid-area: services_price;
+  color: #7e7e82; }
+
+.services_price_void {
+  grid-area: services_price_void; }
+
+.services_time {
+  color: #7e7e82;
+  grid-area: services_time; }
+
+.services_time_void {
+  grid-area: services_time_void; }
+
+.A {
+  display: flex;
+  flex-direction: column;
+  grid-area: A; }
+
+.B {
+  display: flex;
+  flex-direction: column;
+  grid-area: B; }
+
+.C {
+  display: flex;
+  flex-direction: column;
+  grid-area: C; }
+
+.services-card {
+  width: 220px;
+  height: 160px;
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-areas: "A A"
+ "B B"
+ "C button_order";
+  border-radius: 5px;
+  background-color: #ffffff;
+  border: 1px solid #eaeaea;
+  font-family: "TT Lakes", Arial, sans-serif;
+  font-size: 14px; }
+
+@media (min-width: 768px) {
+  .services-card {
+    display: grid;
+    width: 93%;
+    height: 64px;
+    padding: 0 0 0 20px;
+    gap: 0;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "A A A B C button_order"; } }
+
+@media (min-width: 768px) {
+  .services-card_first {
+    background-color: #f8f8f8;
+    border: none; }
+  .services-card_first .services_description {
+    display: none; }
+  .services-card_first .services_price_void {
+    display: none; }
+  .services-card_first .services_time_void {
+    display: none; }
+  .services-card_first .button_order {
+    display: none; }
+  .services-card_all {
+    position: relative;
+    border: none; }
+  .separator::after {
+    position: absolute;
+    top: 62px;
+    left: 3%;
+    width: 94%;
+    border-top: 2px solid #eaeaea;
+    content: ""; }
+  .services-card_all .services_name {
+    display: none; }
+  .services-card_all .services_price {
+    display: none; }
+  .services-card_all .services_time {
+    display: none; } }
+
+.services-card:hover {
+  box-shadow: 1px 1px 3px 1px inset #bcbcc2, -1px -1px 3px 1px inset #bcbcc2; }
+
+.repair-card {
+  width: 240px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+  justify-content: space-between;
+  border-radius: 5px;
+  background-color: #ffffff;
+  border: 1px solid #eaeaea; }
+
+.repair-card:hover {
+  box-shadow: 1px 1px 3px 1px inset #bcbcc2, -1px -1px 3px 1px inset #bcbcc2; }
+
+.slide_text {
+  font-family: "TT Lakes", Arial, sans-serif;
+  font-size: 16px;
+  margin-top: 10px; }
+
+.slide_img {
+  margin: 0 0 10px 170px; }
+
+@media (max-width: 768px) {
+  .slider-1 .swiper-wrapper {
+    display: flex;
+    -moz-column-gap: 0;
+         column-gap: 0; } }
+
+@media (max-width: 768px) {
+  .slider-2 .swiper-wrapper {
+    display: flex;
+    -moz-column-gap: 0;
+         column-gap: 0;
+    height: 180px; } }
+
+@media (max-width: 768px) {
+  .slider-3 .swiper-wrapper {
+    height: 220px;
+    display: flex;
+    -moz-column-gap: 20px;
+         column-gap: 20px; } }
+
+@media (min-width: 768px) {
+  .slider-3 .swiper-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    -moz-column-gap: 0;
+         column-gap: 0;
+    row-gap: 0;
+    -webkit-padding-start: 20px;
+            padding-inline-start: 20px; } }
+
+/* Стилизуем размытие в правой части слайдера */
+.fade {
+  width: 24px;
+  height: 81px;
+  position: absolute;
+  top: 730px;
+  right: 0;
+  z-index: 2;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 20%, #ffffff); }
+
+.center_fade {
+  width: 24px;
+  height: 166px;
+  top: 990px; }
+
+.bottom_fade {
+  width: 24px;
+  height: 230px;
+  top: 1280px; }
+
+/* Прячем размытие после мобилки */
+@media (min-width: 768px) {
+  .fade {
+    display: none; } }
+
+@media (min-width: 768px) {
+  .swiper-pagination {
+    display: none; } }
+
+.slider-1 {
+  padding-bottom: 20px; }
+
+slider-2 {
+  padding-bottom: 20px; }
+
+slider-3 {
+  padding-bottom: 20px; }
+
+.button_order {
+  grid-area: button_order;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #ffffff;
+  width: 119px;
+  height: 32px;
+  font-family: "TT Lakes", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  border: none;
+  border-radius: 30px;
+  background-color: deeppink; }
+
+.button_order:hover {
+  width: 117px;
+  height: 30px; }
+
+/* 
+Модалки */
+.modal_call {
+  z-index: -2;
+  flex-direction: column;
+  position: absolute;
+  width: 320px;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  background-color: #ffffff;
+  content: ""; }
+
+@media (min-width: 1366px) {
+  .modal_call {
+    width: 440px;
+    border-left: 1px solid #d9fff5;
+    box-shadow: 3px -15px 15px 0 #9b9eac; } }
+
+.modal__input {
+  margin: 5px 20px;
+  outline: none;
+  box-shadow: none;
+  width: 85%;
+  height: 48px;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  padding-left: 10px; }
+
+input::-webkit-input-placeholder {
+  padding: 10px;
+  color: #b5b6bc; }
+
+input::-moz-placeholder {
+  padding: 10px;
+  color: #b5b6bc; }
+
+input:-ms-input-placeholder {
+  padding: 10px;
+  color: #b5b6bc; }
+
+input::placeholder {
+  padding: 10px;
+  color: #b5b6bc; }
+
+.message::-webkit-input-placeholder {
+  transform: translateY(-35px); }
+
+.message::-moz-placeholder {
+  transform: translateY(-35px); }
+
+.message:-ms-input-placeholder {
+  transform: translateY(-35px); }
+
+.message::placeholder {
+  transform: translateY(-35px); }
+
+.message {
+  height: 118px; }
+
+.modal_text {
+  display: block;
+  margin-left: 20px;
+  font-family: "TT Lakes", Arial, sans-serif;
+  font-size: 14px;
+  color: #7e7e82; }
+
+.important_text {
+  color: deeppink; }
+
+.modal_title {
+  display: block;
+  width: auto;
+  font-family: "TT Lakes", Arial, sans-serif;
+  font-size: 24px;
+  border-left: #41f6d7 4px solid;
+  margin: 24px 0 24px 0;
+  padding-left: 20px; }
+
+.modal_button {
+  display: flex;
+  position: relative;
+  left: 180px; }
+
+@media (min-width: 1366px) {
+  .modal_button {
+    left: 290px; } }
+
+.modal_close {
+  margin: 20px; }
+
+@media (min-width: 1366px) {
+  .modal_close {
+    position: absolute;
+    left: -100px;
+    content: ""; } }
+
+.modal_open {
+  z-index: 2; }
+
+.modal_back {
+  z-index: -2;
+  flex-direction: column;
+  position: absolute;
+  width: 320px;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  background-color: #ffffff;
+  content: ""; }
+
+@media (min-width: 1366px) {
+  .modal_back {
+    width: 440px;
+    border-left: 1px solid #d9fff5;
+    box-shadow: 3px -15px 15px 0 #9b9eac; } }
+
+.chat_open {
+  z-index: 2; }
+
+.modal_close_caht {
+  margin: 20px; }
+
+@media (min-width: 1366px) {
+  .modal_close_caht {
+    position: absolute;
+    left: -100px;
+    content: ""; } }
+
+/* Стилизация сайдбара, макет 1.4 */
+/* Задаем ширину и тень и фон основному блоку */
+.sidebar {
+  position: absolute;
+  width: 360px;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  box-shadow: 16px 0 52px #0e185033;
+  background-color: #ffffff;
+  min-height: 100vh;
+  overflow: hidden; }
+
+.blure_use {
+  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  content: "";
+  opacity: 0.9; }
+
+@media (min-width: 1366px) {
+  .sidebar {
+    position: relative;
+    z-index: 1;
+    min-width: 320px;
+    box-shadow: none; } }
+
+@media (min-width: 1366px) {
+  .icon_close {
+    display: none; } }
+
+.sidebar_open {
+  z-index: 2; }
+
+.sidebar_main {
+  background-color: #ffffff; }
+
+/* Выравниваем кнопки и логотип в хедере */
+.sidebar_header {
+  display: flex;
+  width: 100%;
+  height: 88px;
+  justify-content: space-around; }
+
+.sidebar .block_left {
+  justify-content: space-between;
+  margin-left: -20px; }
+
+.sidebar_title:hover {
+  font-size: 18px;
+  transition: 1s; }
+
+/* Убираем лишние элементы у списка и выравниваем его */
+.sidebar_li {
+  list-style: none;
+  padding-left: 9px;
+  margin-bottom: 268px; }
+
+@media (max-width: 768px) {
+  .sidebar_li {
+    margin-bottom: 40px; } }
+
+/* Задаем стили текса ссылкам */
+.sidebar_li a {
+  list-style: none;
+  background-color: #ffffff;
+  font-family: "TT Lakes", Arial, sans-serif;
+  font-size: 16px;
+  color: #1b1c21;
+  margin-bottom: 18px;
+  font-weight: 500; }
+
+/* Делаем флекс контейнер с кнопками навигации футера */
+.sidebar_button_li {
+  display: flex;
+  width: 60%;
+  list-style: none;
+  padding-left: 0px;
+  justify-content: space-evenly; }
+
+/* Стилизуем блок с адресом */
+.sidebar_address {
+  display: flex;
+  flex-direction: column; }
+
+.sidebar_address .mail {
+  font-family: "TT Lakes", Arial, sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  color: #1b1c21;
+  padding-left: 24px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  text-decoration: none; }
+
+/* Добавляем эффект при наведении на мейл */
+.sidebar_address .mail:hover {
+  font-size: 18px;
+  transition: 1s; }
+
+.sidebar_address .phone {
+  font-family: "TT Lakes", Arial, sans-serif;
+  font-style: normal;
+  font-size: 24px;
+  color: #1b1c21;
+  padding-left: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-decoration: none; }
+
+/* Добавляем эффект при наведении на телефон */
+.sidebar_address .phone:hover {
+  font-size: 26px;
+  transition: 1s; }
+
+/* Выравниваем кнопки выбора языка */
+.len_menu .sidebar_button_li {
+  justify-content: left;
+  padding-left: 20px; }
+
+/* Добавляем эффект при наведении */
+.len_menu > .sidebar_button_li > li > button:hover {
+  color: #7e7e82;
+  transition: 0.5s; }
+
+/* Стилизуем текст меню выбора языка */
+.len_menu > .sidebar_button_li > li > button {
+  border: none;
+  background-color: #ffffff;
+  font-family: "TT Lakes", Arial, sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  color: #1b1c21; }
+
+/* Подвал */
+.offer {
+  max-width: 421px;
+  margin: 20px;
+  font-family: "TT Lakes", Arial, sans-serif;
+  font-size: 14px;
+  color: #1b1c21;
+  background-color: #f8f8f8; }
+
+.offer__button {
+  text-align: start;
+  font-family: "TT Lakes", Arial, sans-serif;
+  font-size: 16px;
+  color: #1b1c21;
+  font-weight: 700;
+  background-color: #ffffff;
+  border: none;
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+  margin-bottom: 20px;
+  background-color: #f8f8f8; }
+
+.offer__button:hover {
+  font-size: 18px;
+  transition: 0.5s; }
+
+.footer_bottom {
+  border-top: 1px solid #d9fff5;
+  display: flex;
+  flex-direction: column;
+  font-family: "TT Lakes", Arial, sans-serif;
+  font-size: 14px;
+  color: #7e7e82;
+  text-align: center;
+  gap: 16px;
+  padding: 16px 0;
+  background-color: #f8f8f8; }
+
+.last_section {
+  background-color: #f8f8f8; }
+
+@media (min-width: 768px) {
+  .footer_bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 20px; }
+  .since {
+    width: 33%;
+    text-align: left; }
+  .politic {
+    width: 33%; }
+  .inform {
+    width: 33%;
+    text-align: right; } }
+
+html,
+body {
+  width: 100%;
+  margin: 0;
+  background-color: #f8f8f8; }
+
+main {
+  width: 100%;
+  background-color: #f8f8f8;
+  margin: 0; }
+
+@media (min-width: 1366px) {
+  .cite {
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative; } }
+
+/* Стилизация шапки*/
+.header {
+  display: flex;
+  width: 100%;
+  height: 88px;
+  background-color: #ffffff;
+  justify-content: space-around; }
+
+@media (min-width: 1366px) {
+  /* Прячем шапку */
+  .header {
+    display: none; } }
+
+/* Присваиваем значение флекс контейнера и выравнивание блокам шапки */
+.header__block {
+  display: flex;
+  align-items: center; }
+
+/* Назначем рамеры логотипу */
+.header__logo {
+  width: 96px;
+  height: 50px; }
+
+/* Назначаем размеры иконкам */
+.header__icon {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: #ffffff; }
+
+/* Иконка блюрится при наведении */
+.header__icon:hover {
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
+  transition: 1s; }
+
+@media (min-width: 768px) {
+  .header__icon:last-child {
+    margin-right: 0; } }
+
+@media (min-width: 1366px) {
+  .header__icon {
+    background-color: #f8f8f8; } }
+
+/* Стилизуем левый блок шапки с иконкой бургера и логотипом */
+.block_left {
+  width: 55%;
+  justify-content: space-around; }
+
+@media (min-width: 768px) {
+  .block_left {
+    width: 50%;
+    justify-content: flex-start; } }
+
+@media (min-width: 768px) {
+  /* Добавляем декоративный разделитель иконке с бургером в левом блоке шапки */
+  .icon_left {
+    position: relative;
+    margin: 24px;
+    padding-right: 65px; }
+  .icon_left::after {
+    position: absolute;
+    content: url("../img/divider.svg");
+    display: block;
+    width: 2px;
+    height: 32px;
+    top: 5px;
+    right: 0; } }
+
+/*Стилизуем центральный блок шапки с тремя иконками (доступен с разрешения 768+)*/
+.block_center {
+  display: none;
+  width: 35%;
+  justify-content: space-between;
+  list-style-type: none; }
+
+@media (min-width: 768px) {
+  .block_center {
+    display: flex;
+    width: 25%;
+    justify-content: flex-end;
+    -webkit-padding-start: 0;
+            padding-inline-start: 0; } }
+
+/* Задаем иконкам отступы */
+.icon_center {
+  margin: 24px; }
+
+/* Стилизуем правый блок шапки с двумя иконками  */
+.block_right {
+  width: 45%;
+  justify-content: space-evenly;
+  list-style-type: none;
+  -webkit-padding-start: 0;
+          padding-inline-start: 0; }
+
+.block_right::before {
+  content: url("../img/divider.svg");
+  display: block;
+  width: 2px;
+  height: 32px; }
+
+@media (min-width: 768px) {
+  .block_right {
+    width: 25%; } }
+
+/* Стилизация заголовка основного меню */
+.main_title {
+  display: inline-block;
+  font-family: "TT Lakes", Arial, sans-serif;
+  font-size: 28px;
+  border-left: #41f6d7 4px solid;
+  margin: 24px 0 24px 0;
+  padding-left: 24px; }
+
+/* Стилизация блока навигации */
+/* Задаем начало блока, отменяем перенос при переполнении строки, добавляем ползунок при переполнении */
+.main__navbar {
+  display: flex;
+  flex-direction: row;
+  text-wrap: nowrap;
+  overflow: scroll;
+  list-style-type: none; }
+
+@media (min-width: 768px) {
+  .main__navbar {
+    overflow: hidden; } }
+
+@media (min-width: 1366px) {
+  /* Для списка кнопок навигации делаем перенос элементов, прижимаем влево и задаем расстояние между строками */
+  .main__navbar {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    row-gap: 10px; } }
+
+/* Стилизуем элементы списка кнопок навигации */
+.navbar_li {
+  -webkit-padding-start: 28px;
+          padding-inline-start: 28px; }
+
+/* Стилизуем кнопки блока навигации*/
+.navbar_button {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  font-family: "TT Lakes", Arial, sans-serif;
+  font-size: 16px;
+  color: #7e7e82;
+  background-color: #f8f8f8;
+  border: none;
+  padding: 0 15px;
+  text-decoration: none; }
+
+/* Кнопка списка меняет цвет и размер при наведении */
+.navbar_button:hover {
+  border: #b8ffec 2px solid;
+  border-radius: 6px;
+  color: #080808;
+  background-color: #f7f7ff;
+  transition: 0.2s; }
+
+.sidebar__navbar_button {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  font-family: "TT Lakes", Arial, sans-serif;
+  font-size: 16px;
+  color: #7e7e82;
+  background-color: #f8f8f8;
+  border: none;
+  padding: 0 15px;
+  text-decoration: none; }
+
+.sidebar__navbar_button:hover {
+  border-left: #41f6d7 4px solid;
+  color: #7e7e82;
+  transition: 0.2s; }
+
+/* Назначаем ширину, флекс и расположение в столбец */
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column; }
+
+@media (min-width: 768px) {
+  .content {
+    flex-direction: row; } }
+
+/* Отдельный блок с текстом статьи и ссылкой на продолжение текста назначаем флексом в столбец */
+.left_side {
+  display: flex;
+  flex-direction: column; }
+
+@media (min-width: 768px) {
+  .left_side {
+    width: 50%; } }
+
+/* Стилизуем текст */
+.content_text {
+  font-family: "TT Lakes", Arial, sans-serif;
+  font-size: 14px; }
+
+/* Задаем отступы, размер и стилизацию блоку с текстом */
+.content_top {
+  height: 110px;
+  overflow: hidden;
+  margin: 0 15px;
+  margin-bottom: 20px; }
+
+@media (min-width: 768px) {
+  .content_top {
+    justify-self: flex-start;
+    height: 140px;
+    margin: 0 48px 0 24px; } }
+
+/* Задаем отступы и размер блоку с кнопкой на продолжение текста  */
+.content_center {
+  height: 10%;
+  margin: 0 15px; }
+
+/* Меняем цвер при наведени на кнопку */
+.content_center:hover {
+  color: #142fb4; }
+
+@media (min-width: 768px) {
+  /* Добавляем отступ для ссылки развертывания текста */
+  .content_center {
+    margin-top: 24px; } }
+
+/* Задаем размер и отступы для блока с фото */
+.content_img {
+  height: 50%;
+  margin: 20px 0; }
+
+@media (min-width: 768px) {
+  /* Ровняем картинку */
+  .content_img {
+    width: 50%;
+    height: 100%;
+    margin: 0%;
+    margin-top: 15px; } }
+
+/* Стилизуем ссылку на развертывание текста, убираем подчеркивание, выравниваем буквы */
+.content_link {
+  border: none;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  background-color: #f8f8f8;
+  color: #1b1c21; }
+
+/* Прячем контент для расширений от 768+*/
+.fulsize_rightbar {
+  display: none; }
+
+@media (min-width: 1366px) {
+  /* Для правого блока в блоке с заголовком добавляем отступ и делаем его флексом 
+	с расположением элементов по центру по вертикали*/
+  .fulsize_rightbar {
+    padding-right: 32px;
+    display: flex;
+    align-items: center;
+    list-style-type: none; } }
+
+@media (min-width: 1366px) {
+  /* Выравниваем блок с заголовкой, делаем его флексом с расположением элементов по краям */
+  .title_bar {
+    padding-top: 42px;
+    display: flex;
+    justify-content: space-between; }
+  /* Стилизуем текст правого блока */
+  .title_bar_text {
+    display: flex;
+    padding-left: 15px;
+    font-family: "TT Lakes", Arial, sans-serif;
+    font-size: 16px;
+    color: #1b1c21;
+    padding-right: 10px;
+    align-items: center; } }
+
+
+/*# sourceMappingURL=style.css.map*/
