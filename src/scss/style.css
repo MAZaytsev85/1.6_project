@@ -1,8 +1,9 @@
-@import "./path/to/swiper";
-@import "./path/to/modal";
-@import "./path/to/sidebar";
-@import "./path/to/footer";
-@import "./path/to/fonts";
+@import "./path/to/swiper.scss";
+@import "./path/to/modal.scss";
+@import "./path/to/sidebar.scss";
+@import "./path/to/footer.scss";
+@import "./path/to/fonts.scss";
+@import "./path/to/stylesheet.css";
 
 html,
 body {
