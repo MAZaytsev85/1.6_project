@@ -162,9 +162,7 @@
   align-items: center;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(6, 1fr);
-  grid-template-areas: "A A"
- "B B"
- "C button_order";
+  grid-template-areas: "A A" "B B" "C button_order";
   border-radius: 5px;
   background-color: #ffffff;
   border: 1px solid #eaeaea;
@@ -646,6 +644,20 @@ input::placeholder {
     width: 33%;
     text-align: right; } }
 
+@font-face {
+  font-family: 'TT Lakes';
+  src: url(./fonts/TTLakes-Bold.eot);
+  src: local("TT Lakes Bold"), local("TTLakes-Bold"), url(./fonts/TTLakes-Bold.eot?#iefix) format("embedded-opentype"), url(./fonts/TTLakes-Bold.woff) format("woff"), url(./fonts/TTLakes-Bold.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'TT Lakes';
+  src: url(./fonts/TTLakes-Regular.eot);
+  src: local("../fonts/TT Lakes Regular"), local("TTLakes-Regular"), url(./fonts/TTLakes-Regular.eot?#iefix) format("embedded-opentype"), url(./fonts/TTLakes-Regular.woff) format("woff"), url(./fonts/TTLakes-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
 html,
 body {
   width: 100%;
@@ -725,7 +737,7 @@ main {
     padding-right: 65px; }
   .icon_left::after {
     position: absolute;
-    content: url("img/divider.svg");
+    content: url(./static/divider.svg);
     display: block;
     width: 2px;
     height: 32px;
@@ -760,7 +772,7 @@ main {
           padding-inline-start: 0; }
 
 .block_right::before {
-  content: url("img/divider.svg");
+  content: url(./static/divider.svg);
   display: block;
   width: 2px;
   height: 32px; }
