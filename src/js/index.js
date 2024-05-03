@@ -1,3 +1,4 @@
+import "../scss/style.scss";
 
 // Функция инициализации свайпера с брейкпоинтом 769, после которого он должен ломаться, но пока не ломается
 window.addEventListener('DOMContentLoaded', () => {
